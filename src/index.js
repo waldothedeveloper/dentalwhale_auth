@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { useUser } from "./context/userContext";
 import * as serviceWorker from "./serviceWorker";
+
+const user = useUser();
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
