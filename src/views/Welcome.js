@@ -12,6 +12,7 @@ export default function Welcome() {
       }}
     >
       <h1>Welcome page</h1>
+
       <p>Login if you have an account</p>
       <Link to='/login'>
         <button>Login</button>

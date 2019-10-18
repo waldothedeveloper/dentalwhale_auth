@@ -1,13 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { fakeAuth } from "../context/userContext";
+// console.log("fakeAuth on Account:", fakeAuth.isAuthenticated);
 
 export default function Account() {
+  let history = useHistory();
   return (
     <div>
-      <h1>Welcome to your account</h1>
-      <Link to='/'>
-        <button>Sign out</button>
-      </Link>
+      <p>{JSON.stringify(fakeAuth, null, 2)}</p>
+      <h1>Welcome to your protected account</h1>
+      <button onClick={() => fakeAuth.signout(() => history.push("/"))}>
+        Sign out
+      </button>
     </div>
   );
 }
