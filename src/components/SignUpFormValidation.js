@@ -1,18 +1,18 @@
 //regex for special characters
-const NoSpecialCharRegex = /[!\\@/#$%^&*(),';.?":{}[\]|<>]/g;
+let NoSpecialCharRegex = /[!\\@/#$%^&*(),';.?":{}[\]|<>]/g;
 
 //regex for numbers for FirstName
-const NoNumbersRegexFirstName = /\d/g;
+let NoNumbersRegexFirstName = /\d/g;
 
 //regex for numbers for FirstName
-const NoNumbersRegexLastName = /\d/g;
+let NoNumbersRegexLastName = /\d/g;
 
 //regex to check for valid email
 //eslint-disable-next-line
-const ValidEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let ValidEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 //Strong Password requirements
-const strongPasswordRegex = new RegExp(
+let strongPasswordRegex = new RegExp(
   /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/
 );
 
