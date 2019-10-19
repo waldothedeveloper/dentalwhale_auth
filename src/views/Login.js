@@ -105,8 +105,8 @@ export default function Login() {
         </Typography>
         {wrongAccount && (
           <Typography className={classes.alertMessage} variant='body2'>
-            "What you entered doesn’t match what we have on file. <br /> Please
-            verify email and password";
+            What you entered doesn’t match what we have on file. <br /> Please
+            verify email and password
           </Typography>
         )}
         <FormControl className={classes.pickerContainer}>

@@ -4,7 +4,6 @@ import { fakeAuth } from "../context/userContext";
 
 export default function useSignUpForm(validate) {
   const [values, setValues] = React.useState("");
-  // console.log("values on the useSignUpForm: ", values);
   const [errors, setErrors] = React.useState({});
 
   let history = useHistory();
@@ -20,7 +19,7 @@ export default function useSignUpForm(validate) {
 
   //checking errors or invalid input
   React.useEffect(() => {
-    if (Object.keys(values).length > 0) {
+    if (values !== "") {
       setErrors(validate(values));
     }
     //eslint-disable-next-line
@@ -43,9 +42,9 @@ export default function useSignUpForm(validate) {
 
   const handleSubmit = event => {
     if (event) event.preventDefault();
+    // setErrors(validate(values));
 
-    setErrors(validate(values));
-    if (Object.keys(errors).length === 0) {
+    if (Object.keys(errors).length === 0 && values !== "") {
       loginUser();
     }
   };

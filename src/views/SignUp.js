@@ -103,9 +103,9 @@ export default function SignUp() {
               required
               id='firstname-required'
               label='First Name'
-              error={errors.firstName && true}
+              error={errors.firstName ? true : false}
               value={values.firstName || ""}
-              helperText={errors.firstName || ""}
+              helperText={errors.firstName ? errors.firstName : ""}
               onChange={handleChange}
               name='firstName'
               placeholder='John Doe'
@@ -117,9 +117,9 @@ export default function SignUp() {
               required
               id='lastname-required'
               label='Last Name'
-              error={errors.lastName && true}
+              error={errors.lastName ? true : false}
               value={values.lastName || ""}
-              helperText={errors.lastName || ""}
+              helperText={errors.lastName ? errors.lastName : ""}
               onChange={handleChange}
               name='lastName'
               placeholder='John Doe'
@@ -172,7 +172,6 @@ export default function SignUp() {
           <Button
             className={classes.button2}
             variant='contained'
-            // onClick={loginUser}
             onClick={handleSubmit}
           >
             Login
