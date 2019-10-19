@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { fakeAuth } from "../context/userContext";
-// console.log("fakeAuth on Account:", fakeAuth.isAuthenticated);
 
-export default function Account() {
+export default function Account({ fakeUserDatabase }) {
+  console.log("fakeUserDatabase: ", fakeUserDatabase);
   let history = useHistory();
   return (
     <div>
