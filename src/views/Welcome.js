@@ -71,10 +71,10 @@ export default function Welcome() {
         lg={6}
         xl={6}
       >
-        <Typography className={classes.title} gutterBottom variant='h2'>
+        <Typography className={classes.title} gutterBottom variant='h3'>
           Welcome to Whale Dentist
         </Typography>
-        <Typography className={classes.subtitle} gutterBottom variant='h6'>
+        <Typography className={classes.subtitle} gutterBottom variant='body1'>
           Let us make your teeth as strong as a whale. <br />
           No matter what you bite, we will take care of you
         </Typography>

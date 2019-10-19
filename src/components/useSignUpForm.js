@@ -32,13 +32,11 @@ export default function useSignUpForm(validate) {
       if (localStorage.length > 0) {
         const oldStorage = JSON.parse(localStorage.getItem("CachedUsers"));
         const unifiedStorage = [...oldStorage, values];
-        console.log("unifiedStorage: ", unifiedStorage);
+
         localStorage.setItem("CachedUsers", JSON.stringify(unifiedStorage));
       } else {
         localStorage.setItem("CachedUsers", JSON.stringify([values]));
       }
-
-      loginUser();
     }
     //eslint-disable-next-line
   }, [errors]);
@@ -47,6 +45,9 @@ export default function useSignUpForm(validate) {
     if (event) event.preventDefault();
 
     setErrors(validate(values));
+    if (Object.keys(errors).length === 0) {
+      loginUser();
+    }
   };
 
   const handleChange = event => {

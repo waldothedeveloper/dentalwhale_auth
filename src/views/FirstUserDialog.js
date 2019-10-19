@@ -34,7 +34,7 @@ export default function FirstUserDialog({ openDialog, setOpenDialog }) {
         <DialogContent>
           <DialogContentText id='alert-dialog-description'>
             There are no users registered in this app yet. <br />
-            Please Sign Up
+            Please Sign Up First.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

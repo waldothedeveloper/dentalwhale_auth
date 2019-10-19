@@ -154,6 +154,20 @@ export default function SignUp() {
               margin='normal'
               variant='outlined'
             />
+            <TextField
+              className={classes.textField}
+              required
+              id='repeated_password-required'
+              label='Repeat Password'
+              error={errors.repeated_password && true}
+              value={values.repeated_password || ""}
+              helperText={errors.repeated_password || ""}
+              onChange={handleChange}
+              name='repeated_password'
+              placeholder='my super secret password 123'
+              margin='normal'
+              variant='outlined'
+            />
           </FormGroup>
           <Button
             className={classes.button2}

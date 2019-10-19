@@ -1,9 +1,12 @@
 //regex for special characters
-const NoSpecialCharRegex = /[!@#$%^&*(),.?":{}|<>]/g;
+
+const NoSpecialCharRegex = /[!\\@/#$%^&*(),';.?":{}[\]|<>]/g;
+
 //regex for numbers
 const NoNumbersRegex = /\d/g;
 
 //regex to check for valid email
+//eslint-disable-next-line
 const ValidEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 //Checking for Strong
@@ -49,7 +52,7 @@ export default function SignUpFormValidation(values) {
     console.error("Please select a valid email");
     errors.bool = true;
   } else if (!ValidEmailAddress.test(values.email)) {
-    errors.lastName = "Please enter a valid email address";
+    errors.email = "Please enter a valid email address";
     errors.bool = true;
     console.error("Please enter a valid email address");
   }
@@ -65,6 +68,16 @@ export default function SignUpFormValidation(values) {
     console.error(
       "Password should contain at least one uppercase, one digit, one special character, also password length should be minimum 8 characters"
     );
+    errors.bool = true;
+  }
+  //password
+  if (!values.repeated_password) {
+    errors.repeated_password = "Please enter your password again";
+    console.error("Please enter your password again");
+    errors.bool = true;
+  } else if (values.password !== values.repeated_password) {
+    errors.repeated_password = "Your password does not match";
+    console.error("Your password does not match");
     errors.bool = true;
   }
 

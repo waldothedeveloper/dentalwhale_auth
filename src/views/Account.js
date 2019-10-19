@@ -2,8 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { fakeAuth } from "../context/userContext";
 
-export default function Account({ fakeUserDatabase }) {
-  console.log("fakeUserDatabase: ", fakeUserDatabase);
+export default function Account() {
   let history = useHistory();
   return (
     <div>
