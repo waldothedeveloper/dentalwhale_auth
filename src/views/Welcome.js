@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import welcomeImage from "../images/SVG/bg_welcome.svg";
 import Fab from "@material-ui/core/Fab";
 import introBg from "../images/intro-bg.svg";
-import { useLocation } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
 const useStyles = makeStyles(theme => ({
@@ -75,7 +74,6 @@ export default function Welcome() {
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 }
   }));
-  let location = useLocation();
   const classes = useStyles();
 
   return (

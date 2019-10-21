@@ -92,13 +92,15 @@ export default function SignUp() {
         xl={6}
       >
         <Typography className={classes.title} variant='h4'>
-          Register with us. <br />
-          One two three let's go
+          Register with us.
         </Typography>
         <FormControl className={classes.pickerContainer}>
           <FormGroup className={classes.pickerText}>
             <Link className={classes.links} to='/login'>
               <Button className={classes.buttons}>Back to Log in</Button>
+            </Link>
+            <Link className={classes.links} to='/'>
+              <Button className={classes.buttons}>Back to Home</Button>
             </Link>
           </FormGroup>
           <FormGroup className={classes.pickerText2}>

@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
     boxShadow:
       "0 13px 27px -5px rgba(196,196,196,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)",
     padding: "5%"
-    // backgroundColor: "rgb(49, 162, 220)"
   },
   textContainer: {
     display: "flex",
