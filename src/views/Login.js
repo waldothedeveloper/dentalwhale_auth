@@ -109,6 +109,7 @@ export default function Login() {
         <Typography className={classes.title} variant='h4'>
           Sign In or <br /> Create an Account
         </Typography>
+
         {wrongAccount && (
           <Typography className={classes.alertMessage} variant='body2'>
             What you entered doesn’t match what we have on file. <br /> Please
@@ -119,6 +120,10 @@ export default function Login() {
           <FormGroup className={classes.pickerText}>
             <Link className={classes.links} to='/sign-up'>
               <Button className={classes.buttons}>Sign up</Button>
+            </Link>
+
+            <Link className={classes.links} to='/'>
+              <Button className={classes.buttons}>Back to Home</Button>
             </Link>
           </FormGroup>
           <FormGroup className={classes.pickerText2}>

@@ -173,6 +173,7 @@ export default function SignUp() {
               variant='outlined'
             />
           </FormGroup>
+
           <Button
             className={classes.button2}
             variant='contained'
