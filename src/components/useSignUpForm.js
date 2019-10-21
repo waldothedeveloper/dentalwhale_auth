@@ -42,7 +42,9 @@ export default function useSignUpForm(validate) {
 
   const handleSubmit = event => {
     if (event) event.preventDefault();
-    // setErrors(validate(values));
+    if (values === "") {
+      setErrors(validate(values));
+    }
 
     if (Object.keys(errors).length === 0 && values !== "") {
       loginUser();

@@ -48,23 +48,24 @@ export default function useLoginForm(validate) {
       let validEmail = false;
       let validPassword = false;
 
+      //eslint-disable-next-line
       localStorageValues.map(user => {
         if (stateValues.email && user.email !== stateValues.email) {
-          console.log("email account does not exist");
-          setWrongAccount(true)
+          // console.log("email account does not exist");
+          setWrongAccount(true);
         } else {
           validEmail = true;
         }
 
         if (user.password !== stateValues.password) {
-          console.log("password is incorrect, try again");
+          // console.log("password is incorrect, try again");
         } else {
           validPassword = true;
         }
       });
 
       if (validEmail && validPassword) {
-        setWrongAccount(false)
+        setWrongAccount(false);
         loginUser();
       }
     }

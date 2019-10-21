@@ -67,12 +67,18 @@ const useStyles = makeStyles(theme => ({
   buttons: {
     backgroundColor: "rgb(25,72,102)",
     margin: 8,
-    color: "#FFF"
+    color: "#FFF",
+    "&:hover": {
+      backgroundColor: "rgb(30,18,64)"
+    }
   },
   button2: {
     backgroundColor: "rgb(49,162,220)",
     margin: 8,
-    color: "#FFF"
+    color: "#FFF",
+    "&:hover": {
+      backgroundColor: "rgb(30,18,64)"
+    }
   }
 }));
 

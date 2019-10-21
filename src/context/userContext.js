@@ -1,7 +1,8 @@
 // import React from "react";
 
 export const fakeAuth = {
-  isAuthenticated: false,
+  //remember to change this to false when you finish
+  isAuthenticated: true,
   authenticate(cb) {
     this.isAuthenticated = true;
     setTimeout(cb, 100); // fake async

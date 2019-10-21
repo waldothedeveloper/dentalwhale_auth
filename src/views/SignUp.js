@@ -13,14 +13,11 @@ import SignUpFormValidation from "../components/SignUpFormValidation";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    display: "flex",
+    margin: "0 auto",
     boxShadow:
       "0 13px 27px -5px rgba(196,196,196,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)",
     padding: "5%"
-    // backgroundColor: "rgb(49, 162, 220)"
   },
   textContainer: {
     display: "flex",
@@ -61,12 +58,18 @@ const useStyles = makeStyles(theme => ({
   buttons: {
     backgroundColor: "rgb(25,72,102)",
     margin: 8,
-    color: "#FFF"
+    color: "#FFF",
+    "&:hover": {
+      backgroundColor: "rgb(30,18,64)"
+    }
   },
   button2: {
     backgroundColor: "rgb(49,162,220)",
     margin: 8,
-    color: "#FFF"
+    color: "#FFF",
+    "&:hover": {
+      backgroundColor: "rgb(30,18,64)"
+    }
   }
 }));
 
@@ -89,7 +92,8 @@ export default function SignUp() {
         xl={6}
       >
         <Typography className={classes.title} variant='h4'>
-          Create an account in one, two, three
+          Register with us. <br />
+          One two three let's go
         </Typography>
         <FormControl className={classes.pickerContainer}>
           <FormGroup className={classes.pickerText}>

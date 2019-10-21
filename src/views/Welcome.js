@@ -4,20 +4,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import welcomeImage from "../images/SVG/bg_welcome.svg";
-import Button from "@material-ui/core/Button";
+import Fab from "@material-ui/core/Fab";
+import introBg from "../images/intro-bg.svg";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    maxHeight: "80%",
-    maxWidth: "80%",
+    margin: "4rem auto 8rem auto",
+    height: "80%",
+    width: "90%",
     boxShadow:
-      "0 13px 27px -5px rgba(196,196,196,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)",
-    padding: "5%",
-    backgroundColor: "navy"
+      "0 13px 27px -5px rgba(196,196,196,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025)"
   },
   textContainer: {
     display: "flex",
@@ -26,15 +22,27 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-start"
   },
   cover: {
+    padding: "18% 14% 14% 14%",
     maxWidth: "100%",
     height: "auto"
   },
   button1: {
-    color: "#FFF",
-    margin: "8px 8px 8px 0"
+    width: 150,
+    height: 45,
+    boxShadow: "none",
+    color: "rgb(0,195,217)",
+    margin: "8px 8px 8px 0",
+    border: "1px solid rgb(0,195,217)",
+    backgroundColor: "transparent",
+    "&:hover": {
+      backgroundColor: "rgb(30,18,64)"
+    }
   },
   button2: {
-    color: "#FFF",
+    width: 150,
+    height: 45,
+    boxShadow: "none",
+    color: "#FAFAFA",
     margin: 8,
     background:
       "linear-gradient(42deg, rgba(255,139,209,1) 0%, rgba(255,61,136,1) 100%)"
@@ -45,15 +53,15 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontWeight: "bold",
     color: "#00C3D9",
-    padding: "0 5%"
+    padding: "0 10%"
   },
   subtitle: {
-    color: "rgb(188, 224, 226)",
-    fontWeight: "bold",
-    padding: "0 5%"
+    color: "#00C3D9",
+    opacity: 0.5,
+    padding: "0 10%"
   },
   genPadding: {
-    padding: "0 5%"
+    padding: "0 10%"
   }
 }));
 
@@ -61,38 +69,66 @@ export default function Welcome() {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root}>
-      <Grid
-        className={classes.textContainer}
-        item
-        xs={6}
-        sm={6}
-        md={6}
-        lg={6}
-        xl={6}
+    <div>
+      <div
+        style={{
+          backgroundImage: `url(${introBg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "52%",
+          backgroundPosition: "91% 0",
+          height: "100%",
+          overflow: "auto",
+          marginTop: "2rem"
+        }}
       >
-        <Typography className={classes.title} gutterBottom variant='h3'>
-          Welcome to Whale Dentist
-        </Typography>
-        <Typography className={classes.subtitle} gutterBottom variant='body1'>
-          Let us make your teeth as strong as a whale. <br />
-          No matter what you bite, we will take care of you
-        </Typography>
-        <div className={classes.genPadding}>
-          <Link className={classes.links} to='/login'>
-            <Button className={classes.button1}>Log in</Button>
-          </Link>
-
-          <Link className={classes.links} to='/sign-up'>
-            <Button variant='contained' className={classes.button2}>
-              Sign Up
-            </Button>
-          </Link>
-        </div>
-      </Grid>
-      <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
-        <img className={classes.cover} src={welcomeImage} alt='example' />
-      </Grid>
-    </Grid>
+        <Grid container className={classes.root}>
+          <Grid
+            className={classes.textContainer}
+            item
+            xs={6}
+            sm={6}
+            md={6}
+            lg={6}
+            xl={6}
+          >
+            <Typography className={classes.title} gutterBottom variant='h3'>
+              Welcome to <br />
+              Whale Dentist
+            </Typography>
+            <Typography
+              className={classes.subtitle}
+              gutterBottom
+              variant='body1'
+            >
+              Let us make your teeth as strong as a whale. <br />
+              No matter what you bite, we will take care of you
+            </Typography>
+            <div className={classes.genPadding}>
+              <Link className={classes.links} to='/login'>
+                <Fab
+                  variant='extended'
+                  aria-label='delete'
+                  className={classes.button1}
+                >
+                  Log in
+                </Fab>
+              </Link>
+              <Link className={classes.links} to='/sign-up'>
+                <Fab
+                  variant='extended'
+                  aria-label='delete'
+                  className={classes.button2}
+                >
+                  Sign Up
+                </Fab>
+              </Link>
+            </div>
+          </Grid>
+          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+            <img className={classes.cover} src={welcomeImage} alt='example' />
+          </Grid>
+        </Grid>
+      </div>
+    </div>
   );
 }
